@@ -126,12 +126,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: jenkins
+        app: boberjenkins
     spec:
       volumes:
-        - name: jenkins-home
+        - name: boberjenkins-home
           persistentVolumeClaim:
-            claimName: jenkins-pvc
+            claimName: boberjenkins-pvc
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
