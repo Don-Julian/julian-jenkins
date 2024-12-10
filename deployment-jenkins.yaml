@@ -121,7 +121,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins
+      app: boberjenkins
   template:
     metadata:
       creationTimestamp: null
