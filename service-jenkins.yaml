@@ -44,7 +44,7 @@ spec:
       targetPort: 8080
   internalTrafficPolicy: Cluster
   clusterIPs:
-    - 172.30.207.47
+    - 172.30.207.57
   type: ClusterIP
   ipFamilyPolicy: SingleStack
   sessionAffinity: None
