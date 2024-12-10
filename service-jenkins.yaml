@@ -35,7 +35,7 @@ metadata:
           'f:sessionAffinity': {}
           'f:type': {}
 spec:
-  clusterIP: 172.30.207.47
+  clusterIP: 172.30.207.57
   ipFamilies:
     - IPv4
   ports:
