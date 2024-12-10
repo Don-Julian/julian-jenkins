@@ -1,7 +1,7 @@
 ﻿kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: boberjenkins-pv
+  name: julian-pv-jenkins
   uid: 
   resourceVersion: '8868793'
   creationTimestamp: '2024-12-10T07:19:36Z'
@@ -47,7 +47,7 @@ metadata:
             'f:apiVersion': {}
             'f:kind': {}
             'f:name': {}
-            'f:namespace': {}
+            'f:namespace': {julian-jenkins}
             'f:resourceVersion': {}
             'f:uid': {}
           'f:csi':
@@ -75,15 +75,7 @@ spec:
       storage.kubernetes.io/csiProvisionerIdentity: 1733728924406-2141-topolvm.io
   accessModes:
     - ReadWriteOnce
-  claimRef:
-    kind: PersistentVolumeClaim
-    namespace: jonas-jenkins
-    name: jenkins-pvc
-    uid: 5b75fb55-c3c0-46d3-a939-5bb4f4679f36
-    apiVersion: v1
-    resourceVersion: '8868780'
-  persistentVolumeReclaimPolicy: Delete
-  storageClassName: lvms-vg1
+  
   volumeMode: Filesystem
   nodeAffinity:
     required:
