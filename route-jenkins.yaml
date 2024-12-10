@@ -1,0 +1,60 @@
+﻿kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: jenkins
+  namespace: julian-jenkins
+  uid: 14528243-84a8-4ac7-b848-3263d5afcefc
+  resourceVersion: '8869073'
+  creationTimestamp: '2024-12-10T07:21:02Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{},"name":"jenkins","namespace":"jonas-jenkins"},"spec":{"host":"jenkins.apps.cluster5.karoshi.se","port":{"targetPort":8080},"to":{"kind":"Service","name":"jenkins","weight":100},"wildcardPolicy":"None"}}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-12-10T07:21:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:spec':
+          'f:host': {}
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2024-12-10T07:21:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+      subresource: status
+spec:
+  host: boberjenkins.apps.cluster5.karoshi.se
+  to:
+    kind: Service
+    name: jenkins
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: boberjenkins.apps.cluster5.karoshi.se
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2024-12-10T07:21:02Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.apps.cluster5.karoshi.se
