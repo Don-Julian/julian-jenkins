@@ -77,7 +77,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  volumeName: pvc-5b75fb55-c3c0-46d3-a939-5bb4f4679f36
+  volumeName: boberjenkins-pv
   storageClassName: lvms-vg1
   volumeMode: Filesystem
 status:
