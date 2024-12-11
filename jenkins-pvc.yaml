@@ -1,88 +1,13 @@
-﻿kind: PersistentVolumeClaim
+﻿---
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
   name: julianjenkins-pvc
-  namespace: julian-jenkins
-  uid: 5b75fb55-c3c0-46d3-a939-5bb4f4679f36
-  resourceVersion: '8868795'
-  creationTimestamp: '2024-12-10T07:12:50Z'
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"jenkins-pvc","namespace":"julian-jenkins"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"5Gi"}},"storageClassName":"lvms-vg1","volumeMode":"Filesystem"}}
-    pv.kubernetes.io/bind-completed: 'yes'
-    pv.kubernetes.io/bound-by-controller: 'yes'
-    volume.beta.kubernetes.io/storage-provisioner: topolvm.io
-    volume.kubernetes.io/selected-node: ba-be-ba-be-05-05
-    volume.kubernetes.io/storage-provisioner: topolvm.io
-  finalizers:
-    - kubernetes.io/pvc-protection
-  managedFields:
-    - manager: kubectl-client-side-apply
-      operation: Update
-      apiVersion: v1
-      time: '2024-12-10T07:12:50Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:kubectl.kubernetes.io/last-applied-configuration': {}
-        'f:spec':
-          'f:accessModes': {}
-          'f:resources':
-            'f:requests':
-              .: {}
-              'f:storage': {}
-          'f:storageClassName': {}
-          'f:volumeMode': {}
-    - manager: kube-scheduler
-      operation: Update
-      apiVersion: v1
-      time: '2024-12-10T07:19:35Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:volume.kubernetes.io/selected-node': {}
-    - manager: kube-controller-manager
-      operation: Update
-      apiVersion: v1
-      time: '2024-12-10T07:19:36Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:pv.kubernetes.io/bind-completed': {}
-            'f:pv.kubernetes.io/bound-by-controller': {}
-            'f:volume.beta.kubernetes.io/storage-provisioner': {}
-            'f:volume.kubernetes.io/storage-provisioner': {}
-        'f:spec':
-          'f:volumeName': {}
-    - manager: kube-controller-manager
-      operation: Update
-      apiVersion: v1
-      time: '2024-12-10T07:19:36Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:status':
-          'f:accessModes': {}
-          'f:capacity':
-            .: {}
-            'f:storage': {}
-          'f:phase': {}
-      subresource: status
 spec:
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
-  volumeName: julian-pv-jenkins
   storageClassName: lvms-vg1
   volumeMode: Filesystem
-status:
-  phase: Bound
-  accessModes:
-    - ReadWriteOnce
-  capacity:
-    storage: 5Gi
